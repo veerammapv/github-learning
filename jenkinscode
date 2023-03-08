@@ -22,9 +22,9 @@ pipeline {
       sshagent(['tomcat']){
       
       sh """
-         scp -o StrictHostkeyChecking"no target/github-learning.war ec2-user@172.31.118:/home/ec2-user/apache/tomcat9.0.46/webapps/
-         ssh ec2-user@172.31.118:/home/ec2-user/apache/tomcat9.0.46/bin/shoutdown.sh
-         ssh ec2-user@172.31.118:/home/ec2-user/apache/tomcat9.0.46/bin/startup.sh
+         scp -o StrictHostkeyChecking"no target/github-learning.war ec2-user@172.31.6.11:/home/ec2-user/apache/tomcat9.0.73/webapps/
+         ssh ec2-user@172.31.6.11:/home/ec2-user/apache/tomcat9.0.46/bin/shoutdown.sh
+         ssh ec2-user@172.31.6.11:/home/ec2-user/apache/tomcat9.0.46/bin/startup.sh
          
          """
          }
