@@ -19,9 +19,9 @@ pipeline {
    }
      stage ("deploy-dev"){
       steps {
-      sshagent(['tomcat']){
-      
-      sh """
+       sshagent(['tomcat-new']) {
+    
+        sh """
          scp -o StrictHostkeyChecking"no target/github-learning.war ec2-user@172.31.6.11:/home/ec2-user/apache/tomcat9.0.73/webapps/
          ssh ec2-user@172.31.6.11:/home/ec2-user/apache/tomcat9.0.46/bin/shoutdown.sh
          ssh ec2-user@172.31.6.11:/home/ec2-user/apache/tomcat9.0.46/bin/startup.sh
